@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 4vw;
+
+}
+.header__logoytitulo{
+    display: flex;
+    align-items: center;
+}
+
+.header__logo{
+    height: 30px;
+}
+
+.header__titulo{
+    font-weight: 700;
+}
+
+.header__menu ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 4vw;
+}
