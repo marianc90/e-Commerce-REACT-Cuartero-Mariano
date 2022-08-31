@@ -1,0 +1,34 @@
+.counter__box{
+    margin: 15px auto 15px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width:200px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgb(202, 219, 226);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.counter__box--increaseDecreaseIcon{
+    font-weight: 700;
+    font-size: 20px;
+    padding:10px;
+    cursor: pointer;
+}
+
+.counter__box--counternumber{
+    font-weight: 700;
+}
+
+.counter__box--onAddButton{
+    margin: 15px;
+    background-color: rgb(195, 218, 216);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+
+}
