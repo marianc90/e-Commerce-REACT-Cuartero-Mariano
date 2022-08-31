@@ -1,0 +1,8 @@
+.cartwidget__img {
+    width: 3em;
+    transition: all 0.5s;
+}
+.cartwidget__img:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+}
