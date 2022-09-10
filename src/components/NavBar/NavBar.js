@@ -8,7 +8,7 @@ const NavBar = () => {
         <header className='header'>
             <div className='header__logoytitulo'>
                 <img src={logo} className="App-logo header__logo" alt="logo" />
-                <span className='header__titulo'>Tienda Online</span>
+                <span className='header__titulo'>Tienda React</span>
             </div>
             <nav className='header__menu'>
                 <ul>
