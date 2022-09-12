@@ -1,0 +1,16 @@
+.item-list{
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.items-links{
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+
+
+}

@@ -26,3 +26,17 @@
     align-items: center;
     gap: 4vw;
 }
+
+.nav-active{
+    font-weight: bold;
+    color: white;
+    background-color: rgb(101, 110, 117);
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 1px 8px 3px;
+}
+.nav-inactive{
+    font-weight: lighter;
+    text-decoration: none;
+    color: black;
+}

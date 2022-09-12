@@ -1,20 +1,36 @@
 import './NavBar.styles.css';
 import logo from '../../logo.svg';
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <div>
         <header className='header'>
+            <NavLink to= '/' className='nav-inactive'>
             <div className='header__logoytitulo'>
                 <img src={logo} className="App-logo header__logo" alt="logo" />
                 <span className='header__titulo'>Tienda React</span>
             </div>
+            </NavLink>
             <nav className='header__menu'>
                 <ul>
-                    <li>Productos</li>
-                    <li>Nosotros</li>
-                    <li>Contacto</li>
+                    
+                    <NavLink to={'/category' + '/Buzos'} className={({ isActive }) => (
+                        isActive ? 
+                        'nav-active' : 
+                        'nav-inactive')}>Buzos
+                    </NavLink>
+                    <NavLink to={'/category' + '/Remeras'} className={({ isActive }) => (
+                        isActive ? 
+                        'nav-active' : 
+                        'nav-inactive')}>Remeras
+                    </NavLink>
+                    <NavLink to={'/category' + '/Abrigos'} className={({ isActive }) => (
+                        isActive ? 
+                        'nav-active' : 
+                        'nav-inactive')}>Abrigos
+                    </NavLink>
                     <li><CartWidget /></li>
                 </ul>
             </nav>
