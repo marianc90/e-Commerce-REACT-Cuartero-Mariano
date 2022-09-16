@@ -23,12 +23,3 @@
     font-weight: 700;
 }
 
-.counter__box--onAddButton{
-    margin: 15px;
-    background-color: rgb(195, 218, 216);
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    cursor: pointer;
-
-}

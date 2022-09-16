@@ -38,5 +38,23 @@
     max-width: 45%;
     padding: 0 2rem;
     align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: left;
+}
+
+.item-detail__contenido--addToCartButton{
+    margin: 15px;
+    width: fit-content;
+    background-color: rgb(195, 218, 216);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: medium;
+    align-self: center;
 }
