@@ -1,18 +1,27 @@
 import "./ItemDetail.styles.css";
 import ItemCount from "../../components/ItemCount/ItemCount";
-import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from '../../context/CartProvider'
+
 
 const ItemDetail = ({ producto }) => {
   const [counter, setCounter] = useState(0);
   const [stockState, setStockState] = useState(0);
+  const { addItem, cart } = useContext(CartContext);
 
   useEffect(() => {
-    setStockState(producto.stock)
+    setStockState(producto.stock);
   },[producto.stock]);
 
-  const addToCart = () => {
-        return (counter <= stockState) ? (setStockState(stockState - counter), console.log(counter)) : null;
+  const addToCart = () => {        
+      return counter <= stockState ? 
+      (
+      setStockState(stockState - counter), 
+      addItem(producto, counter), 
+      console.log(cart)
+      ) 
+      : null;
     }
  
   return (
