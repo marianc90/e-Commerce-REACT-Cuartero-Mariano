@@ -6,7 +6,7 @@ import { CartContext } from '../../context/CartProvider'
 
 
 const ItemDetail = ({ producto }) => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const [stockState, setStockState] = useState(0);
   const { addItem, cart } = useContext(CartContext);
 
@@ -18,8 +18,7 @@ const ItemDetail = ({ producto }) => {
       return counter <= stockState ? 
       (
       setStockState(stockState - counter), 
-      addItem(producto, counter), 
-      console.log(cart)
+      addItem(producto, counter)
       ) 
       : null;
     }

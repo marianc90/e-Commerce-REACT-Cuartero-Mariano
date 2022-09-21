@@ -1,8 +1,31 @@
+.cartwidget{
+    text-decoration: none;
+    display: flex;
+}
+
 .cartwidget__img {
     width: 3em;
+    height: 3em;
     transition: all 0.5s;
 }
 .cartwidget__img:hover {
     transform: rotate(360deg);
     cursor: pointer;
+}
+
+.cartwidget__counter {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    margin-left: -10px;
+    padding: 1px 5px;
+    transition: all 1s;
+}
+
+.cartwidget:hover .cartwidget__img{
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+.cartwidget:hover .cartwidget__counter{
+    transform: scale(150%);
 }
