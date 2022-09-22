@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-     const { cart, removeItem } = useContext(CartContext);
+     const { cart, removeItem, clear } = useContext(CartContext);
 
 
     return (
@@ -33,6 +33,10 @@ const Cart = () => {
 
         (<><p>El carrito está vacío...🪰</p><Link to="/" className="cart__card--eliminar--boton">Continuar comprando</Link></>)}
     
+    { (cart.length > 0) && 
+        <div className="cart__card--eliminar">
+            <button onClick={clear} className="cart__card--eliminar--boton">Vaciar carrito</button>
+        </div>}
     </div>
   )
 }
