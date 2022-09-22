@@ -34,7 +34,10 @@ const ItemDetail = ({ producto }) => {
           <h5>{producto.description}</h5>
           <h5>Stock disponible: {stockState}</h5>
           <ItemCount setCounter={setCounter} counter={counter} setStockState={setStockState} stockState={stockState} />
-          <Link to={'/cart'} onClick={addToCart} className="item-detail__contenido--addToCartButton">Agregar al Carrito</Link>
+          <div>
+          <button onClick={addToCart} className="item-detail__contenido--addToCartButton">Agregar al Carrito</button>
+          {cart.some((item)=> item.id == producto.id) ? <Link to={'/cart'} className="item-detail__contenido--addToCartButton">Terminar mi Compra</Link> : null}
+          </div>
       </div>
     </div>
   )
