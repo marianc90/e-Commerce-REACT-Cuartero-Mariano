@@ -1,10 +1,10 @@
-import data from "../../components/mockData.js";
 import loader from "../../assets/img/giphy.gif";
 import "./itemDetailContainer.styles.css";
 import ItemDetail from "../../components/ItemDetail/ItemDetail.js";
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
+import {  getFirestore, doc, getDoc } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
@@ -12,22 +12,22 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState([]);
     const [cargando, setCargando] = useState(true);
     const  navigate = useNavigate();
+    
+    const getProduct = () => { 
+
+        const db= getFirestore();
+        const queryDoc = doc(db, 'items', id);   
+
+        getDoc(queryDoc)
+        .then((response) => {
+            setItem(response.data());
+            setCargando(false);})
+        .catch((err) => console.log(err)); 
+    }
 
     useEffect(() => {
-        getProducts()
+       getProduct()
     }, []);
-    
-    const getProducts = () => {new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(data)
-        }, 2000);
-    })
-    .then((response) => {
-        setItem(response.find(producto => producto.id == id)); 
-        setCargando(false)
-    })
-    .catch((error) => console.log(error));
-    }
 
   return (
     <>

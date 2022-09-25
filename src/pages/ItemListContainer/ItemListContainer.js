@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./ItemListContainer.styles.css";
-import data from "../../components/mockData.js";
 import loader from "../../assets/img/giphy.gif";
 import ItemList from "../../components/ItemList/ItemList";
 import { useParams } from 'react-router-dom';
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -11,22 +11,26 @@ const ItemListContainer = ({ greeting }) => {
   const [productList, setProductList] = useState([]);
   const [cargando, setCargando] = useState(true);
 
-  useEffect(() => {
-    getProducts
-    .then((response) => {
-      categoryId ? 
-      setProductList(response.filter(item => item.category == categoryId)) :
-      setProductList(response);
-      setCargando(false);
-    })
-    .catch((error) => console.log(error));
-  }, [categoryId]);
+  const getProducts = () => {
 
-  const getProducts = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(data);
-        }, 2000)
-      });
+      const db = getFirestore();
+      const querySnapshot = collection(db, 'items');
+
+    getDocs(querySnapshot)
+      .then((response) => {
+        const data = response.docs.map(
+        (doc) => {return {id: doc.id, ...doc.data() } }
+        );
+        categoryId ? 
+        setProductList(data.filter(item => item.category === categoryId)) :
+        setProductList(data);
+        setCargando(false);})
+      .catch((error) => console.log(error));
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, [categoryId]);
   
   return (
     <>

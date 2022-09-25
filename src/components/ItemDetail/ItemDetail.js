@@ -10,6 +10,7 @@ const ItemDetail = ({ producto }) => {
   const [stockState, setStockState] = useState(0);
   const { addItem, cart } = useContext(CartContext);
 
+
   useEffect(() => {
     setStockState(producto.stock);
   },[producto.stock]);
