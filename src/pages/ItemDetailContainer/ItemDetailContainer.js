@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
 
         getDoc(queryDoc)
         .then((response) => {
-            setItem(response.data());
+            setItem({id: response.id, ...response.data()});
             setCargando(false);})
         .catch((err) => console.log(err)); 
     }
