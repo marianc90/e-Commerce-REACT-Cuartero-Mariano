@@ -3,7 +3,7 @@ import "./ItemListContainer.styles.css";
 import loader from "../../assets/img/giphy.gif";
 import ItemList from "../../components/ItemList/ItemList";
 import { useParams } from 'react-router-dom';
-import { getFirestore, getDocs, collection } from "firebase/firestore";
+import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -15,14 +15,15 @@ const ItemListContainer = ({ greeting }) => {
 
       const db = getFirestore();
       const querySnapshot = collection(db, 'items');
-
-    getDocs(querySnapshot)
+      const queryfilter = categoryId ? 
+      query(querySnapshot, where('category', '==', categoryId)) : 
+      querySnapshot;
+    
+      getDocs(queryfilter)
       .then((response) => {
         const data = response.docs.map(
         (doc) => {return {id: doc.id, ...doc.data() } }
         );
-        categoryId ? 
-        setProductList(data.filter(item => item.category === categoryId)) :
         setProductList(data);
         setCargando(false);})
       .catch((error) => console.log(error));
