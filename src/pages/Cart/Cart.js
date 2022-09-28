@@ -93,7 +93,7 @@ const Cart = () => {
     
     { (cart.length > 0) && 
         <div className="cart__card--finalizar">
-          <h4>Total: $ {cart.reduce((valorPasado, valorActual) => valorPasado + (valorActual.price*valorActual.quantity), 0)}</h4>
+          <h4>Total: $ {cart.reduce((valorPasado, valorActual) => valorPasado + (valorActual.price*valorActual.quantity), 0).toFixed(2)}</h4>
           <button onClick={clear} className="cart__card--finalizar--boton">Vaciar carrito</button>
           <div className="cart__card--send">            
             <p>Nombre: <input type="text" id="name" ></input></p>
