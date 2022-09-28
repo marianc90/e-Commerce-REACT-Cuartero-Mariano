@@ -3,7 +3,7 @@ import "./ItemCount.styles.css";
 const ItemCount = ({setCounter, counter, setStockState, stockState}) => {
 
     const decrease = () => {
-       return (counter > 0) ? setCounter(counter - 1) : null;
+       return (counter > 1) ? setCounter(counter - 1) : null;
     }
     const increase = () => {
         return (counter < stockState) ? setCounter(counter + 1) : null; 

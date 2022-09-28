@@ -12,16 +12,22 @@ const ItemDetail = ({ producto }) => {
 
 
   useEffect(() => {
+    if (cart.find((index) => index.id === producto.id)){
+      let itemExists = cart.find((index) => index.id === producto.id)
+      let newStock = producto.stock - itemExists.quantity 
+      setStockState(newStock);
+    } else {
     setStockState(producto.stock);
+    }
   },[producto.stock]);
 
   const addToCart = () => {        
-      return counter <= stockState ? 
+      return (counter <= stockState) ? 
       (
       setStockState(stockState - counter), 
       addItem(producto, counter)
       ) 
-      : null;
+      : alert("No hay stock!");
     }
  
   return (
@@ -36,8 +42,8 @@ const ItemDetail = ({ producto }) => {
           <h5>Stock disponible: {stockState}</h5>
           <ItemCount setCounter={setCounter} counter={counter} setStockState={setStockState} stockState={stockState} />
           <div>
-          <button onClick={addToCart} className="item-detail__contenido--addToCartButton">Agregar al Carrito</button>
-          {cart.some((item)=> item.id == producto.id) ? <Link to={'/cart'} className="item-detail__contenido--addToCartButton">Terminar mi Compra</Link> : null}
+          <button onClick={addToCart} className="item-detail__contenido--addToCartButton">Agregar al carrito</button>
+          {cart.some((item)=> item.id == producto.id) ? <Link to={'/cart'} className="item-detail__contenido--addToCartButton">Ir al carrito</Link> : null}
           </div>
       </div>
     </div>

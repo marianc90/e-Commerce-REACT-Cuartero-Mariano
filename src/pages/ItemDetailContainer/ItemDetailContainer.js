@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
   return (
     <>
     {!cargando ? <ItemDetail producto={item} /> : <img src={loader} alt="loader"></img>}
-    {!cargando && <button onClick={() => navigate(-1)} className="cart__card--eliminar--boton">Regresar</button>}
+    {!cargando && <button onClick={() => navigate(-1)} className="cart__card--finalizar--boton">Regresar</button>}
     </>
   )
 }
