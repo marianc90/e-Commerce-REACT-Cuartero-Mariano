@@ -16,6 +16,7 @@ const CartProvider = ({children}) => {
         } else {
             setCart([...cart, {...item, quantity}]);
         }
+        
     }
 
 
@@ -25,7 +26,6 @@ const CartProvider = ({children}) => {
     }
     const clear = () => {
         setCart([]);
-        sessionStorage.removeItem('cart');
     }
 
     useMemo(() => sessionStorage.setItem("cart", JSON.stringify(cart)), [cart])
