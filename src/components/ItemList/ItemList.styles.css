@@ -11,6 +11,10 @@
     margin: 20px;
     text-decoration: none;
     color: black;
-
-
+    transition: all 0.5s;
 }
+
+.items-links:hover{
+    transform: scale(96%);
+}
+

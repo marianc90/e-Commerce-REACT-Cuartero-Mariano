@@ -3,20 +3,29 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0 4vw;
+    padding: 0 4vw;
+    background-color: #282c34;
+    color: white;
+    position: fixed;
+    width: 94%;
+    top: 0;
+    z-index: 10;
 
 }
 .header__logoytitulo{
+    font-family: 'Poiret One', cursive;
     display: flex;
     align-items: center;
 }
 
 .header__logo{
-    height: 30px;
+    height: 60px;
+    margin: 10px;
 }
 
 .header__titulo{
     font-weight: 700;
+    font-size: 2rem;
 }
 
 .header__menu ul{
@@ -38,5 +47,11 @@
 .nav-inactive{
     font-weight: lighter;
     text-decoration: none;
-    color: black;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .header{        
+        flex-direction: column;
+    }
 }

@@ -1,12 +1,12 @@
 .item-detail__container{
-    border-radius: 20px;
-    background-color: lightblue;
+    border-radius: 10px;
+    background-color: rgb(207, 228, 235);
     padding: 2rem;
     width: 75vw;
     max-width: 1024px;
     margin: 2rem auto;
     border: 1px solid #ccc;
-    background-color: rgb(202, 219, 226);
+    background-color: rgb(220, 225, 228);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
 .item-detail__imagen img{
     width: 100%;
     min-width: 250px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid #ccc;
     background-color: rgb(202, 219, 226);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -47,7 +47,7 @@
 .item-detail__contenido--addToCartButton{
     margin: 15px;
     width: fit-content;
-    background-color: rgb(195, 218, 216);
+    background-color: rgb(218, 230, 229);
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 10px;

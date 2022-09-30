@@ -1,5 +1,5 @@
 import './NavBar.styles.css';
-import logo from '../../logo.svg';
+import logo from '../../logo.jpg';
 import CartWidget from '../CartWidget/CartWidget';
 import { NavLink } from 'react-router-dom';
 
@@ -10,7 +10,8 @@ const NavBar = () => {
             <NavLink to= '/' className='nav-inactive'>
             <div className='header__logoytitulo'>
                 <img src={logo} className="App-logo header__logo" alt="logo" />
-                <span className='header__titulo'>Tienda React</span>
+                <i class="fa-duotone fa-clothes-hanger"></i>
+                <span className='header__titulo'>MyStore</span>
             </div>
             </NavLink>
             <nav className='header__menu'>

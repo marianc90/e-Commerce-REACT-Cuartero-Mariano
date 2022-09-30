@@ -67,6 +67,7 @@ box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     cursor: pointer;
     text-decoration: none;
     font-weight: 700;
+    color: black;
 }
 .cart__card--send{
     border-radius: 20px;
@@ -76,4 +77,38 @@ box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     border: 1px solid #ccc;
     background-color: rgb(197, 210, 216);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 500px){
+    .cart__card--img{
+        grid-area: img;
+        object-fit: cover;
+        width: 5rem;
+        height: 5rem;
+        margin-top: 30px;
+
+    }
+
+    .cart__card{
+        grid-template-areas:
+        "content content img"
+        "content content img"
+        "total total eliminar";
+        font-size: smaller;
+        grid-template-columns: 5rem 2fr 2fr;
+        gap: 10px;
+        width: 90vw;
+        }
+
+    .cart__card--total{
+        padding-top: 0px;
+        margin: 0 left;
+    }
+    .cart__card--content{
+        grid-area: content;
+        margin: 0 auto;
+        padding: 10px;
+        
+    
+    }
 }

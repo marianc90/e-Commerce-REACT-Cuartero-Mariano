@@ -10,17 +10,35 @@ const Cart = () => {
 
      const { cart, removeItem, clear } = useContext(CartContext);
      const [exito, setExito] = useState(false);
-    
+     
+  
   useEffect(() => {
     return () => {
       setExito(false);
     }
   }, [])
+
+      const changeFields = () => {
+        const formulario = [document.getElementById("name"), document.getElementById("phone"), document.getElementById("email"),document.getElementById("email2")];
+        let sendButton = document.getElementById("sendButton");
+        if (formulario.every(element => element.value != "")) {
+        
+        sendButton.removeAttribute("disabled");
+        sendButton.addEventListener("click", createOrder);
+       }
+       else{
+
+        sendButton.setAttribute("disabled", "")
+       }
+      }
   
       const createOrder = () => {
-        let formulario = [document.getElementById("name"), document.getElementById("phone"), document.getElementById("email")];
+        let formulario = [document.getElementById("name"), document.getElementById("phone"), document.getElementById("email"),document.getElementById("email2")];
         if (formulario.some(element => element.value == "")){
           return alert("No debe haber campos vacíos en el formulario");
+        }
+        if (formulario[2].value != formulario[3].value){
+          return alert("Los campos de email no coinciden");
         }
         const order = {
           buyer:{
@@ -43,11 +61,11 @@ const Cart = () => {
 
         addDoc(query, order)
         .then((response) => {
-          console.log(response);
+          console.log(response.id);
+          setExito(response.id);
           return updateStock()})
         .then((response) => {
           clear();
-          setExito(true);
           return alert("Felicidades por su compra")})
         .catch((error) => alert("Su compra no pudo realizarse"))
     };
@@ -69,7 +87,9 @@ const Cart = () => {
     <div className="cart__container">
     <h1>Carrito</h1>
 
-    { exito && <h2>¡Felicidades por su compra!</h2> }
+    { exito && <div><h2>¡Felicidades por su compra!</h2>
+    <br/>
+    <h4>La misma se ha registrado con el identificador n° <i>{exito}</i>.</h4><br/><br/><br/><br/><br/><br/><br/><br/></div>}
 
     { (cart.length > 0) ? 
 
@@ -87,20 +107,24 @@ const Cart = () => {
             <div className="cart__card--eliminar">
               <button onClick={() => removeItem(item)} className="cart__card--finalizar--boton">Eliminar del carrito</button>
             </div>
-        </div>      ))) :
-
-        (<><p>El carrito está vacío...🪰</p><Link to="/" className="cart__card--finalizar--boton">Continuar comprando</Link></>)}
+        </div>      ))) : 
+        
+         ( exito ? <Link to="/" className="cart__card--finalizar--boton">Continuar comprando</Link> :  (<><p>El carrito está vacío...🪰</p><Link to="/" className="cart__card--finalizar--boton">Continuar comprando</Link><br/><br/><br/><br/><br/><br/><br/><br/></>) )}
     
     { (cart.length > 0) && 
         <div className="cart__card--finalizar">
           <h4>Total: $ {cart.reduce((valorPasado, valorActual) => valorPasado + (valorActual.price*valorActual.quantity), 0).toFixed(2)}</h4>
           <button onClick={clear} className="cart__card--finalizar--boton">Vaciar carrito</button>
+          <br/>
+          <br/>
+          <Link to="/" className="cart__card--finalizar--boton">Continuar comprando</Link>
           <div className="cart__card--send">            
-            <p>Nombre: <input type="text" id="name" ></input></p>
-            <p>Teléfono: <input type="tel" id="phone" ></input></p>
-            <p>E-mail: <input type="email" id="email" ></input></p>
+            <p>Nombre: <input type="text" id="name"  onChange={changeFields}></input></p>
+            <p>Teléfono: <input type="tel" id="phone" onChange={changeFields}></input></p>
+            <p>E-mail: <input type="email" id="email" onChange={changeFields}></input></p>
+            <p>Confirma E-mail: <input type="email" id="email2" onChange={changeFields}></input></p>
             <br></br>
-            <button onClick={createOrder} className="cart__card--finalizar--boton">Finalizar compra</button>
+            <button className="cart__card--finalizar--boton" id="sendButton" disabled>Finalizar compra</button>
           </div>
         </div>}
 
