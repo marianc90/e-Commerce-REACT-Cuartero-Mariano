@@ -10,11 +10,13 @@
 .items-links{
     margin: 20px;
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     transition: all 0.5s;
+    
 }
 
 .items-links:hover{
-    transform: scale(96%);
+    transform: scale(97%);
 }
+
 
