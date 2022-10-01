@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="leyenda">
         <img src="https://avatars.githubusercontent.com/u/104873709?s=400&u=622c21c74d4d2f59becc2a0cc01c4b7853709f4c&v=4" width="100px"/>
         <br></br>
-        <i>Trabajo sin ánimo de lucro, desarrollado como trabajo final para el curso de REACT JS de CODERHOUSE.</i>
+        <i>Trabajo desarrollado como trabajo final para el curso de REACT JS de CODERHOUSE.</i>
         </div>
        
         <div className="footer-bottom">
