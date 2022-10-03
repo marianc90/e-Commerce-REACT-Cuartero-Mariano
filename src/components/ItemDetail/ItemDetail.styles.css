@@ -58,3 +58,9 @@
     font-size: medium;
     align-self: center;
 }
+
+@media screen and (max-width: 910px){
+    .item-detail__contenido--addToCartButton{
+        display: block;
+        }
+}
