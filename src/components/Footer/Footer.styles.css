@@ -85,6 +85,42 @@ footer{
      font-weight: 200;
  }
 
+.nav-active-float{
+    position: fixed;
+    bottom: 5vh;
+    right: 3vw;
+    color: white;
+    text-decoration: none;
+    background-color: #282C34;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-inactive-float{
+    position: fixed;
+    bottom: 5vh;
+    right: -105px;
+    color: transparent;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.5s;
+}
+.nav-inactive-float:hover{
+    position: fixed;
+    right: 3vw;
+    color: white;
+    text-decoration: none;
+    background-color: #282C34;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
  @media (max-width:500px) {
     .footer-menu ul{
       display: flex;

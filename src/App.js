@@ -7,6 +7,7 @@ import CartProvider from './context/CartProvider';
 import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import { useEffect } from 'react';
+import MyOrder from './components/MyOrder/MyOrder';
 
 function App() {
   useEffect(() => {
@@ -23,9 +24,10 @@ function App() {
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/myorder" element={<MyOrder />} />
       </Routes>
-      </BrowserRouter>
       <Footer />
+      </BrowserRouter>
       </CartProvider>
     </div>
   );
