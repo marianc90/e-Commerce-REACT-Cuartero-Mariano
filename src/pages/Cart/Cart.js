@@ -87,7 +87,7 @@ const Cart = () => {
     <div className="cart__container">
     <h1 className="itemlistcontainer__greeting">Carrito</h1>
 
-    { exito && <div><h2>¡Felicidades por su compra!</h2>
+    { exito && <div style={{color:"white"}}><h2>¡Felicidades por su compra!</h2>
     <br/>
     <h4>La misma se ha registrado con el identificador n° <i>{exito}</i>.</h4><br/><br/><br/><br/><br/><br/><br/><br/></div>}
 
