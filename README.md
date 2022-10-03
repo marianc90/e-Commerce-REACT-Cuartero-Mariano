@@ -11,7 +11,7 @@ Como primer proyecto del curso de REACT JS, desarrollé este sitio e-commerce.
 <img src="https://github.com/marianc90/e-Commerce-REACT-Cuartero-Mariano/blob/master/public/MyStore%20-%20Mariano%20Cuartero's%20App.gif?raw=true">
 </p>
 
-✔ web site: <a href="https://marianc90.github.io/gfc-sacabollos/" target="_blank">
+✔ web site: <a href="https://e-commerce-mystore-kodb82710-marianc90.vercel.app/" target="_blank">
 MyStore {deployed}
 </a> 
 
