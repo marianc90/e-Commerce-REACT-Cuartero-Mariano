@@ -10,7 +10,7 @@ const NavBar = () => {
             <NavLink to= '/' className='nav-inactive'>
             <div className='header__logoytitulo'>
                 <img src={logo} className="App-logo header__logo" alt="logo" />
-                <i class="fa-duotone fa-clothes-hanger"></i>
+                <i className="fa-duotone fa-clothes-hanger"></i>
                 <span className='header__titulo'>MyStore</span>
             </div>
             </NavLink>

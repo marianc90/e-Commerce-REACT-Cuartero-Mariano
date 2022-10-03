@@ -71,6 +71,9 @@ padding: 10px;
     font-weight: 700;
     color: black;
 }
+.cart__card--finalizar--boton:disabled{
+   visibility: hidden;
+}
 .cart__card--send{
     border-radius: 20px;
     margin: 30px;
