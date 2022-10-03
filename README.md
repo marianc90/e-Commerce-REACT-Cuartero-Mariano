@@ -8,7 +8,7 @@ Este proyecto fue creado con [Create React App](https://github.com/facebook/crea
 Como primer proyecto del curso de REACT JS, desarrollé este sitio e-commerce.
 
 <p align="center">
-<video src="https://i.imgur.com/bizdcew.mp4" height='250px' autoplay loop>
+<img src="https://github.com/marianc90/e-Commerce-REACT-Cuartero-Mariano/blob/master/public/MyStore%20-%20Mariano%20Cuartero's%20App.gif?raw=true">
 </p>
 
 ✔ web site: <a href="https://marianc90.github.io/gfc-sacabollos/" target="_blank">
