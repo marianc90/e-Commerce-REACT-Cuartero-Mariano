@@ -85,7 +85,7 @@ const Cart = () => {
 
     return (
     <div className="cart__container">
-    <h1>Carrito</h1>
+    <h1 className="itemlistcontainer__greeting">Carrito</h1>
 
     { exito && <div><h2>¡Felicidades por su compra!</h2>
     <br/>
@@ -102,14 +102,14 @@ const Cart = () => {
             </div>  
             <div className="cart__card--total">
               <p>Cantidad: {item.quantity}</p>
-              <h4>Subtotal: $ {item.quantity*item.price}.-</h4>
+              <h4>Subtotal: $ {(item.quantity*item.price).toFixed(2)}.-</h4>
             </div>
             <div className="cart__card--eliminar">
               <button onClick={() => removeItem(item)} className="cart__card--finalizar--boton">Eliminar del carrito</button>
             </div>
         </div>      ))) : 
         
-         ( exito ? <Link to="/" className="cart__card--finalizar--boton">Continuar comprando</Link> :  (<><p>El carrito está vacío...🪰</p><Link to="/" className="cart__card--finalizar--boton">Continuar comprando</Link><br/><br/><br/><br/><br/><br/><br/><br/></>) )}
+         ( exito ? <Link to="/" className="cart__card--finalizar--boton">Continuar comprando</Link> :  (<><p style={{color:"white"}}>El carrito está vacío...🪰</p><Link to="/" className="cart__card--finalizar--boton">Continuar comprando</Link><br/><br/><br/><br/><br/><br/><br/><br/></>) )}
     
     { (cart.length > 0) && 
         <div className="cart__card--finalizar">

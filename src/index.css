@@ -7,6 +7,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(161, 161, 163);
+  background-image: url("https://i.imgur.com/olrtXOq.jpg");
+  background-size: cover;
+  background-position: top center;
 }
 
 code {
