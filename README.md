@@ -31,6 +31,7 @@ Esta librería se utilizó para desarrollar la navegación dentro del sitio, per
 
 Por medio de distintas entregas fuimos añadiendo funcionalidades, tales como selección de unidades a comprar, según stock; contenedor de items impresos en pantalla según consulta a un mock Data (simulado tiempo de consulta con un setTimeOut), y filtrados por categoría; detalle de items; Links de navegación dinámicos, que filtran por categoría; etc... 
 
+Mediante la utilización de Session Storage se logró la persistencia del cart.
 
 <hr/>
 
